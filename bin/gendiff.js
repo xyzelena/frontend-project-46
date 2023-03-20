@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
+
 const program = new Command();
 
 program
@@ -10,7 +11,6 @@ program
 
 program.parse();
 
+// const genDiff = (filepath1, filepath2) => {};
 
-//const genDiff = (filepath1, filepath2) => {};
-
-//export default genDiff; 
+// export default genDiff;
