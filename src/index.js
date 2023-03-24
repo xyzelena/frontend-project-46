@@ -8,6 +8,6 @@ const gendiff = (filepath1, filepath2) => {
   return compareFiles(file1, file2);
 };
 
-// gendiff('file1.json', 'file2.json');
+gendiff('file1.json', 'file2.json');
 
 export default gendiff;
