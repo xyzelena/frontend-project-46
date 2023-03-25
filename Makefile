@@ -6,3 +6,6 @@ publish:
 
 lint:
 	npx eslint --fix .
+
+say-hello:
+	@echo "Hello, World!"
