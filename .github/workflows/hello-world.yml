@@ -1,8 +1,8 @@
-name: hello-world
-on: push
+name: say-hello
+on: make say-hello
 jobs:
   build:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v3
-      - run: ls -la
+      - run: make say-hello
