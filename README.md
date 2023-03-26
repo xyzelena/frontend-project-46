@@ -1,3 +1,5 @@
+#frontend-project-46
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/xyzelena/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/xyzelena/frontend-project-46/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c8f494664d02a08c55ef/maintainability)](https://codeclimate.com/github/xyzelena/frontend-project-46/maintainability)
@@ -27,23 +29,27 @@ To maintain code quality the following technologies were used: _GitHub Actions, 
 
 __Stack:__ _JavaScript, NodeJS, Git, NPM, ESLint, commander.js, Jest_. 
 
-## Installation
-  make install
+## Setup
+
+```bash
+make install
+```
   
 ## Basic commands:
 
 * Get help output, parameter description:
 
+```bash
 gendiff -h
+```
 
 * Comparison of two files:
 
+```bash
 gendiff filepath1.json filepath2.json
+```
 
 ## Asciinemas with an example of how the project works:
 
 <a href="https://asciinema.org/a/570394" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/227791446-dc8af3ea-58ce-46c1-8201-6c41483906af.png" 
 alt="Asciinemas" width="240" height="180" border="10" /></a>
-
-
-
