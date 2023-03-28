@@ -10,6 +10,9 @@ const result = `{
  + verbose: true
 }`;
 
-test('gendiff', () => {
-  expect(gendiff('file1.json', 'file2.json')).toEqual(result);
+test.each([
+  ['file1.json','file2.json', result],
+  ['file1.yml','file2.yml', result],
+])('.add(%i, %i)', (a, b, expected) => {
+  expect(gendiff(a,b)).toBe(expected);
 });
