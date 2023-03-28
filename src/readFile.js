@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const getFixturePath = (file) => path.join(__dirname, '..', '__fixtures__', file);
 
-const parseFile = (data, ext) => {
+const parsers = (data, ext) => {
   let parse;
   if (ext === '' || ext === '.json') parse = JSON.parse;
   else if (ext === '.yml' || ext === '.yaml') parse = yaml.load;
@@ -21,7 +21,7 @@ const readFile = (file) => {
 
   const data = fs.readFileSync(getFixturePath(file), 'utf-8');
 
-  return parseFile(data, ext);
+  return parsers(data, ext);
 };
 
 export default readFile;
