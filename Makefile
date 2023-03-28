@@ -7,5 +7,10 @@ publish:
 lint:
 	npx eslint --fix .
 
-say-hello:
-	@echo "Hello, World!"
+test:
+	npm test
+
+test-coverage:
+	npm test -- --coverage --coverageProvider=v8
+
+.PHONY: test
