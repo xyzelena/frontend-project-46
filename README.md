@@ -58,5 +58,5 @@ alt="Asciinemas" width="240" height="180" border="10" /></a>
 
 2. Compare different file formats:
 
-<a href="https://asciinema.org/a/572696" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/229195370-c50a0c66-2eb6-49a7-8fbe-a4eb5c305687.png" 
+<a href="https://asciinema.org/a/572696" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/229196007-2cc8bbb4-4138-4499-8a16-a4d9b8507108.png" 
 alt="Asciinemas" width="240" height="180" border="10" /></a>
