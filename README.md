@@ -51,5 +51,12 @@ gendiff filepath1.json filepath2.json
 
 ## Asciinemas with an example of how the project works:
 
+1. Install the program and get help:
+
 <a href="https://asciinema.org/a/570394" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/227791446-dc8af3ea-58ce-46c1-8201-6c41483906af.png" 
+alt="Asciinemas" width="240" height="180" border="10" /></a>
+
+2. Compare different file formats:
+
+<a href="https://asciinema.org/a/572696" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/229195370-c50a0c66-2eb6-49a7-8fbe-a4eb5c305687.png" 
 alt="Asciinemas" width="240" height="180" border="10" /></a>
