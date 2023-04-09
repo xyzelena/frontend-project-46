@@ -1,24 +1,47 @@
 import _ from 'lodash';
 
-const compareFiles = (file1, file2) => {
-  const keys1 = Object.keys(file1);
-  const keys2 = Object.keys(file2);
-  const keys = (_.union(keys1, keys2)).sort();
+const getKeys = (data1, data2) => {
+  const keys1 = Object.keys(data1);
+  const keys2 = Object.keys(data2);
+  return (_.union(keys1, keys2)).sort();
+};
 
-  const space = ' ';
+const compareFiles = (data1, data2) => {
+  const keys = getKeys(data1, data2);
 
-  const result = keys.map((key) => {
-    if (!_.has(file1, key)) return `${space}+ ${key}: ${file2[key]}`;
-    if (!_.has(file2, key)) return `${space}- ${key}: ${file1[key]}`;
+  const diff = keys.map((key) => {
+    const value1 = data1[key];
+    const value2 = data2[key];
+    let result = {};
 
-    if (file1[key] !== file2[key]) {
-      return `${space}- ${key}: ${file1[key]} \n${space}+ ${key}: ${file2[key]}`;
+    if (_.has(data1, key) && _.has(data2, key)) {
+      if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
+        result = { key, children: compareFiles(value1, value2), status: 'nested' };
+        return result;
+      }
+
+      if (_.isEqual(value1, value2)) {
+        result = { key, value1, status: 'unchanged' };
+        return result;
+      }
+      result = {
+        key, value1, value2, status: 'changed',
+      };
+      return result;
+    } // end if with both has
+
+    if (_.has(data1, key) && !_.has(data2, key)) {
+      result = { key, value1, status: 'deleted' };
+      return result;
+    } if (!_.has(data1, key) && _.has(data2, key)) {
+      result = { key, value2, status: 'added' };
+      return result;
     }
 
-    return `${space}${space} ${key}: ${file1[key]}`;
+    return result;
   });
 
-  return (['{', ...result, '}'].join('\n'));
+  return diff;
 };
 
 export default compareFiles;
