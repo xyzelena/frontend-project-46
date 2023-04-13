@@ -1,6 +1,6 @@
 import { parseFile } from './utils.js';
 import compareFiles from './compareFiles.js';
-import applyFormat from './formatOutput/applyFormat.js';
+import applyFormat from './formatters/index.js';
 
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const file1 = parseFile(filepath1);
