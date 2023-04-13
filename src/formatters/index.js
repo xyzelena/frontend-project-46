@@ -5,7 +5,7 @@ const applyFormat = (diff, format) => {
   switch (format) {
     case ('stylish'):
       return doStylish(diff);
-    
+
     case ('plain'):
       return doPlain(diff);
 
