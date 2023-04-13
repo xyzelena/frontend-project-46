@@ -6,20 +6,20 @@ import gendiff from '../src/index.js';
 
 const __dirname = process.cwd();
 
-const getFilePath = (filename) => path.resolve(__dirname, '__fixtures__', filename);
+const getFilePath = (filename) => path.resolve(__dirname, filename);
 
 const readFile = (filename) => fs.readFileSync(getFilePath(filename), 'utf-8');
 
 const getString = (str) => String(str).trim();
 
-const jsonStylishResult = readFile('jsonStylishResult.txt');
-const ymlStylishResult = readFile('ymlStylishResult.txt');
+const jsonStylishResult = readFile('__fixtures__/jsonStylishResult.txt');
+const ymlStylishResult = readFile('__fixtures__/ymlStylishResult.txt');
 
-const jsonPlainResult = readFile('jsonPlainResult.txt');
-const ymlPlainResult = readFile('ymlPlainResult.txt');
+const jsonPlainResult = readFile('__fixtures__/jsonPlainResult.txt');
+const ymlPlainResult = readFile('__fixtures__/ymlPlainResult.txt');
 
-const jsonFormatJsonResult = readFile('jsonFormatJsonResult.txt');
-const ymlFormatJsonResult = readFile('ymlFormatJsonResult.txt');
+const jsonFormatJsonResult = readFile('__fixtures__/jsonFormatJsonResult.txt');
+const ymlFormatJsonResult = readFile('__fixtures__/ymlFormatJsonResult.txt');
 
 test.each([
   ['file1.json', 'file2.json', 'stylish', jsonStylishResult],
