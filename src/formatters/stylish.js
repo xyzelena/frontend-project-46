@@ -1,4 +1,4 @@
-import { getIndent, getBracketIndent, stringify } from './stringify.js';
+import { getIndent, getBracketIndent, stringify } from './utils.js';
 
 const doStylish = (diff) => {
   const iter = (carrentValue, depth = 1) => {
