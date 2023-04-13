@@ -9,6 +9,9 @@ const applyFormat = (diff, format) => {
     case ('plain'):
       return doPlain(diff);
 
+    case ('json'):
+      return JSON.stringify(diff);
+
     default:
       throw new Error(`Unknown format name: ${format}!`);
   }
