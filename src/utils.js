@@ -11,10 +11,7 @@ const readFile = (filename) => fs.readFileSync(getFilePath(filename), 'utf-8');
 
 const getExt = (filename) => path.extname(filename);
 
-const parseFile = (filename) => {
-  const ext = getExt(filename);
-  const data = readFile(filename);
-
+const parseFile = (data, ext) => {
   switch (ext) {
     case '.json': return JSON.parse(data);
     case '.yml': return yaml.load(data);
