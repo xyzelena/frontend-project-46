@@ -13,11 +13,11 @@ const doStylish = (diff) => {
           return result;
 
         case 'deleted':
-          result = `${carrentIndent}- ${node.key}: ${stringify(node.value1, depth + 1)}`;
+          result = `${carrentIndent} - ${node.key}: ${stringify(node.value1, depth + 1)}`;
           return result;
 
         case 'added':
-          result = `${carrentIndent}+ ${node.key}: ${stringify(node.value2, depth + 1)}`;
+          result = `${carrentIndent} + ${node.key}: ${stringify(node.value2, depth + 1)}`;
           return result;
 
         case 'unchanged':
@@ -26,8 +26,8 @@ const doStylish = (diff) => {
 
         case 'changed':
           result = [
-            `${carrentIndent}- ${node.key}: ${stringify(node.value1, depth + 1)}`,
-            `${carrentIndent}+ ${node.key}: ${stringify(node.value2, depth + 1)}`,
+            `${carrentIndent} - ${node.key}: ${stringify(node.value1, depth + 1)}`,
+            `${carrentIndent} + ${node.key}: ${stringify(node.value2, depth + 1)}`,
           ];
           return result;
 
