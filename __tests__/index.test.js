@@ -1,25 +1,20 @@
 import { test, expect } from '@jest/globals';
-import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
 import gendiff from '../src/index.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const readFile = (filepath) => fs.readFileSync(path.resolve(process.cwd(), filepath), 'utf-8');
 
-const getFixturePath = (filepath) => path.join(__dirname, '..', '__fixtures__', filepath);
-
-// const readFile = (filepath) => fs.readFileSync(getFixturePath(filepath), 'utf-8');
 const getString = (str) => String(str).trim();
 
-const jsonStylishResult = fs.readFileSync(getFixturePath('jsonStylishResult.txt'), 'utf-8');
-const ymlStylishResult = fs.readFileSync(getFixturePath('ymlStylishResult.txt'), 'utf-8');
+const jsonStylishResult = readFile('__fixtures__/jsonStylishResult.txt');
+const ymlStylishResult = readFile('__fixtures__/ymlStylishResult.txt');
 
-const jsonPlainResult = fs.readFileSync(getFixturePath('jsonPlainResult.txt'), 'utf-8');
-const ymlPlainResult = fs.readFileSync(getFixturePath('ymlPlainResult.txt'), 'utf-8');
+const jsonPlainResult = readFile('__fixtures__/jsonPlainResult.txt');
+const ymlPlainResult = readFile('__fixtures__/ymlPlainResult.txt');
 
-const jsonFormatJsonResult = fs.readFileSync(getFixturePath('jsonFormatJsonResult.txt'), 'utf-8');
-const ymlFormatJsonResult = fs.readFileSync(getFixturePath('ymlFormatJsonResult.txt'), 'utf-8');
+const jsonFormatJsonResult = readFile('__fixtures__/jsonFormatJsonResult.txt');
+const ymlFormatJsonResult = readFile('__fixtures__/ymlFormatJsonResult.txt');
 
 test.each([
   ['file1.json', 'file2.json', 'stylish', jsonStylishResult],
