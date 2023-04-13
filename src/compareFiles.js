@@ -14,6 +14,14 @@ const compareFiles = (data1, data2) => {
     const value1 = data1[key];
     const value2 = data2[key];
 
+    if (_.has(data1, key) && !_.has(data2, key)) {
+      return { key, value1, status: 'deleted' };
+    }
+
+    if (!_.has(data1, key) && _.has(data2, key)) {
+      return { key, value2, status: 'added' };
+    }
+
     if (_.has(data1, key) && _.has(data2, key)) {
       if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
         return { key, children: compareFiles(value1, value2), status: 'nested' };
@@ -27,12 +35,6 @@ const compareFiles = (data1, data2) => {
         key, value1, value2, status: 'changed',
       };
     } // end if with both has
-
-    if (_.has(data1, key) && !_.has(data2, key)) {
-      return { key, value1, status: 'deleted' };
-    } if (!_.has(data1, key) && _.has(data2, key)) {
-      return { key, value2, status: 'added' };
-    }
 
     return {};
   });
