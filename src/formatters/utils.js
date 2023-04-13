@@ -12,7 +12,7 @@ const stringify = (carrentValue, depth = 1) => {
 
   const arrCarValue = Object.entries(carrentValue);
 
-  const lines = arrCarValue.map(([key, val]) => `${carrentIndent} ${key}: ${stringify(val, depth + 1)}`);
+  const lines = arrCarValue.map(([key, val]) => `${carrentIndent}  ${key}: ${stringify(val, depth + 1)}`);
 
   const result = ['{', ...lines, `${bracketIndent}}`].join('\n');
 
