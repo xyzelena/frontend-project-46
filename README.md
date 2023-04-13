@@ -61,7 +61,12 @@ alt="Asciinemas" width="240" height="180" border="10" /></a>
 <a href="https://asciinema.org/a/572696" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/229196007-2cc8bbb4-4138-4499-8a16-a4d9b8507108.png" 
 alt="Asciinemas" width="240" height="180" border="10" /></a>
 
-2. Compare with format 'stylish' and make test:
+3. Compare with format 'stylish' and make test:
 
 <a href="https://asciinema.org/a/577444" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/231876036-67d1d557-57e7-4bde-8c34-8b5a8ef90edd.png" 
+alt="Asciinemas" width="240" height="180" border="10" /></a>
+
+4. Compare with format 'plain':
+
+<a href="https://asciinema.org/a/577458" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/231894358-a40cd438-de93-4dfd-8200-58afdd7fb406.png" 
 alt="Asciinemas" width="240" height="180" border="10" /></a>
