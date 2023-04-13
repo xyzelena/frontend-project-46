@@ -1,7 +1,7 @@
 import { getIndent, getBracketIndent, stringify } from './stringify.js';
 
 const doStylish = (diff) => {
-  const iter = (carrentValue, depth) => {
+  const iter = (carrentValue, depth = 1) => {
     const carrentIndent = getIndent(depth);
     const bracketIndent = getBracketIndent(depth);
     let result = '';
@@ -13,21 +13,21 @@ const doStylish = (diff) => {
           return result;
 
         case 'deleted':
-          result = `${carrentIndent} - ${node.key}: ${stringify(node.value1, depth + 1)}`;
+          result = `${carrentIndent}- ${node.key}: ${stringify(node.value1, depth + 1)}`;
           return result;
 
         case 'added':
-          result = `${carrentIndent} + ${node.key}: ${stringify(node.value2, depth + 1)}`;
+          result = `${carrentIndent}+ ${node.key}: ${stringify(node.value2, depth + 1)}`;
           return result;
 
         case 'unchanged':
-          result = `${carrentIndent} ${node.key}: ${stringify(node.value1, depth + 1)}`;
+          result = `${carrentIndent}  ${node.key}: ${stringify(node.value1, depth + 1)}`;
           return result;
 
         case 'changed':
           result = [
-            `${carrentIndent} - ${node.key}: ${stringify(node.value1, depth + 1)}`,
-            `${carrentIndent} + ${node.key}: ${stringify(node.value2, depth + 1)}`,
+            `${carrentIndent}- ${node.key}: ${stringify(node.value1, depth + 1)}`,
+            `${carrentIndent}+ ${node.key}: ${stringify(node.value2, depth + 1)}`,
           ];
           return result;
 
