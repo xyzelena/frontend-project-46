@@ -1,14 +1,6 @@
 import { test, expect } from '@jest/globals';
-import path from 'path';
-import fs from 'fs';
-import process from 'process';
+import { readFile } from '../src/utils.js';
 import gendiff from '../src/index.js';
-
-const __dirname = process.cwd();
-
-const getFilePath = (filename) => path.resolve(__dirname, filename);
-
-const readFile = (filename) => fs.readFileSync(getFilePath(filename), 'utf-8');
 
 const getString = (str) => String(str).trim();
 
@@ -21,13 +13,18 @@ const ymlPlainResult = readFile('__fixtures__/ymlPlainResult.txt');
 const jsonFormatJsonResult = readFile('__fixtures__/jsonFormatJsonResult.txt');
 const ymlFormatJsonResult = readFile('__fixtures__/ymlFormatJsonResult.txt');
 
+const json1 = '__fixtures__/file1.json';
+const json2 = '__fixtures__/file2.json';
+const yml1 = '__fixtures__/file1.yml';
+const yml2 = '__fixtures__/file2.yml';
+
 test.each([
-  ['file1.json', 'file2.json', 'stylish', jsonStylishResult],
-  ['file1.yml', 'file2.yml', 'stylish', ymlStylishResult],
-  ['file1.json', 'file2.json', 'plain', jsonPlainResult],
-  ['file1.yml', 'file2.yml', 'plain', ymlPlainResult],
-  ['file1.json', 'file2.json', 'json', jsonFormatJsonResult],
-  ['file1.yml', 'file2.yml', 'json', ymlFormatJsonResult],
+  [json1, json2, 'stylish', jsonStylishResult],
+  [yml1, yml2, 'stylish', ymlStylishResult],
+  [json1, json2, 'plain', jsonPlainResult],
+  [yml1, yml2, 'plain', ymlPlainResult],
+  [json1, json2, 'json', jsonFormatJsonResult],
+  [yml1, yml2, 'json', ymlFormatJsonResult],
 ])('get diff', (a, b, c, expected) => {
   expect(getString(gendiff(a, b, c))).toEqual(getString(expected));
 });

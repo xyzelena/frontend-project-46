@@ -1,20 +1,19 @@
-import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
+import process from 'process';
 import yaml from 'js-yaml';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = process.cwd();
 
-const getFixturePath = (filepath) => path.join(__dirname, '..', '__fixtures__', filepath);
+const getFilePath = (filename) => path.resolve(__dirname, filename);
 
-const readFile = (filepath) => fs.readFileSync(getFixturePath(filepath), 'utf-8');
+const readFile = (filename) => fs.readFileSync(getFilePath(filename), 'utf-8');
 
-const getExt = (filepath) => path.extname(filepath);
+const getExt = (filename) => path.extname(filename);
 
-const parseFile = (filepath) => {
-  const ext = getExt(filepath);
-  const data = readFile(filepath);
+const parseFile = (filename) => {
+  const ext = getExt(filename);
+  const data = readFile(filename);
 
   switch (ext) {
     case '.json': return JSON.parse(data);
