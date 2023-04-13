@@ -1,15 +1,14 @@
 import { test, expect } from '@jest/globals';
-import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
+import process from 'process';
 import gendiff from '../src/index.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = process.cwd();
 
-const getFixturePath = (filepath) => path.join(__dirname, filepath);
+const getFilePath = (filename) => path.resolve(__dirname, '__fixtures__', filename);
 
-const readFile = (filepath) => fs.readFileSync(path.resolve(process.cwd(), getFixturePath(filepath)), 'utf-8');
+const readFile = (filename) => fs.readFileSync(getFilePath(filename), 'utf-8');
 
 const getString = (str) => String(str).trim();
 
