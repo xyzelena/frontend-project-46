@@ -9,7 +9,7 @@ const doStylish = (diff) => {
     const lines = carrentValue.flatMap((node) => {
       switch (node.status) {
         case 'nested':
-          result = `${carrentIndent}${carrentIndent} ${node.key}: ${iter(node.children, depth + 1)}`;
+          result = `${carrentIndent}${node.key}: ${iter(node.children, depth + 1)}`;
           return result;
 
         case 'deleted':
