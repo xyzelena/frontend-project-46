@@ -19,6 +19,8 @@ const compareFiles = (data1, data2) => {
     } if (!_.has(data1, key) && _.has(data2, key)) {
       return { key, value2, status: 'added' };
     }
+
+    // if both data1 and data2 has key
     if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
       return { key, children: compareFiles(value1, value2), status: 'nested' };
     }
