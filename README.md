@@ -43,10 +43,37 @@ make install
 gendiff -h
 ```
 
-* Comparison of two files:
+* Comparison of two files with default format 'stylish':
 
 ```bash
-gendiff filepath1.json filepath2.json
+gendiff file1.json file2.json
+```
+or 
+
+```bash
+gendiff file1.yml file2.yml
+```
+
+* Comparison of two files json or yml with format 'plain'. Use -f or --format: 
+
+```bash
+gendiff -f plain file1.json file2.json
+```
+
+* Comparison with format 'json':
+
+```bash
+gendiff -format json file1.yml file2.yml
+```
+
+## Make test:
+
+```bash
+make test
+```
+
+```bash
+make test-coverage
 ```
 
 ## Asciinemas with an example of how the project works:
@@ -69,4 +96,9 @@ alt="Asciinemas" width="240" height="180" border="10" /></a>
 4. Compare with format 'plain':
 
 <a href="https://asciinema.org/a/577458" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/231894358-a40cd438-de93-4dfd-8200-58afdd7fb406.png" 
+alt="Asciinemas" width="240" height="180" border="10" /></a>
+
+4. Compare with format 'json':
+
+<a href="https://asciinema.org/a/577671" target="_blank"><img src="https://user-images.githubusercontent.com/111981509/232150963-ad9ef8a8-c62b-43a3-b083-a9f73b432fad.png" 
 alt="Asciinemas" width="240" height="180" border="10" /></a>
