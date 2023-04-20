@@ -47,24 +47,24 @@ gendiff -h
 * Comparison of two files with default format 'stylish':
 
 ```bash
-gendiff file1.json file2.json
+gendiff filepath1.json filepath2.json
 ```
 or 
 
 ```bash
-gendiff file1.yml file2.yml
+gendiff filepath1.yml filepath2.yml
 ```
 
 * Comparison of two files json or yml with format 'plain'. Use -f or --format: 
 
 ```bash
-gendiff -f plain file1.json file2.json
+gendiff -f plain filepath1.json filepath2.json
 ```
 
 * Comparison with format 'json':
 
 ```bash
-gendiff -format json file1.yml file2.yml
+gendiff -format json filepath1.yml filepath2.yml
 ```
 
 ## Make test:
